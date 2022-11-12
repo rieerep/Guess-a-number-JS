@@ -24,17 +24,18 @@ function userGuess(event) {
     // Om ul.children.length = 6 så blir det GAME OVER
     if (userNumber == randomNumber) {
         console.log('user guess correct');
-        document.querySelector('.result').textContent = 'Du gissade rätt';
+        document.querySelector('.result').textContent = 'YOU WON!';
+        document.querySelector('body').style.backgroundColor = '#7AFE7A'
         button.setAttribute('disabled', '');
     } else if (userNumber < randomNumber) {
         console.log('user guess too low');
-        document.querySelector('.result').textContent = 'För lågt';
+        document.querySelector('.result').textContent = 'Too low';
         maxGuess++;
         console.log('maxguess', maxGuess);
 
     } else if (userNumber > randomNumber) {
         console.log('user guess too high');
-        document.querySelector('.result').textContent = 'För högt';
+        document.querySelector('.result').textContent = 'Too high';
         maxGuess++;
 
     }
@@ -42,6 +43,7 @@ function userGuess(event) {
         console.log('game over');
         button.setAttribute('disabled', '');
         document.querySelector('.result').textContent = 'GAME OVER';
+        document.querySelector('body').style.backgroundColor = '#FE4452'
     } if (userNumber > 100 || userNumber < 1) {
         document.querySelector('.result').textContent = 'Skriv ett nummer mellan 1-100'
     }
